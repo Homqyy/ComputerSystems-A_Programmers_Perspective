@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "5/combine1",
+            "includePath": [
+                "${workspaceFolder}/code/include/",
+                "${workspaceFolder}/code/",
+                "${workspaceFolder}/5/",
+                "/usr/include/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "intelliSenseMode": "gcc-x86"
+        }
+    ],
+    "version": 4
+}

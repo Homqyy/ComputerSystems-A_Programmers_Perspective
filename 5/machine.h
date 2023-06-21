@@ -1,0 +1,1 @@
+#define CPU_FREQUENCY 3200000000 // 3.2 GHz
