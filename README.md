@@ -6,4 +6,4 @@
 
 ## code说明
 
-[code.html](./code.html)
+[code.html](./docs/code.html)
