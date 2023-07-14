@@ -80,6 +80,27 @@ combine4(vec_ptr v, data_t *dest)
 }
 
 /**
+ * 边界检查对程序性能的影响：不会对程序的关键路径产生太大影响
+*/
+void
+combine4b(vec_ptr v, data_t *dest)
+{
+    long i;
+    long length = vec_length(v);
+    data_t acc = IDENT;
+
+    for (i = 0; i < length; i++)
+    {
+        if (i >= 0 && i < v->len)
+        {
+            acc = acc OP v->data[i];
+        }
+    }
+
+    *dest = acc;
+}
+
+/**
  * 2 x 1 loop unrolling
  * 优化：循环展开
  */
@@ -195,6 +216,7 @@ main(int argc, char *argv[])
         count_cpe("combine2", combine2, v, &dest);
         count_cpe("combine3", combine3, v, &dest);
         count_cpe("combine4", combine4, v, &dest);
+        count_cpe("combine4b", combine4b, v, &dest);
         count_cpe("combine5", combine5, v, &dest);
         count_cpe("combine6", combine6, v, &dest);
         count_cpe("combine7", combine7, v, &dest);
