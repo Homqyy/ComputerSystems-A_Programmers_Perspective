@@ -4,3 +4,5 @@
 *.tar
 *.elf
 *.a
+*.objdump
+*.so
